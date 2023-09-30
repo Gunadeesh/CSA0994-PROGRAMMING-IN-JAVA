@@ -50,7 +50,7 @@ public class HospitalManagementSystem {
             System.out.print("Enter your choice: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
@@ -80,7 +80,7 @@ public class HospitalManagementSystem {
 
         System.out.print("Enter patient age: ");
         int age = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
 
         System.out.print("Enter patient sex (M/F): ");
         char sex = scanner.nextLine().charAt(0);
@@ -115,7 +115,7 @@ public class HospitalManagementSystem {
                 System.out.println("Enter new details for " + name + ":");
                 System.out.print("Enter new hospital charges: $");
                 int hospitalCharges = scanner.nextInt();
-                patient.setDaysAdmitted(0); // Reset days admitted
+                patient.setDaysAdmitted(0);
                 patient = new Patient(patient.toString().replace("$" + patient.hospitalCharges, "$" + hospitalCharges), patient.getDaysAdmitted());
                 patients.set(patients.indexOf(patient), patient);
                 found = true;
