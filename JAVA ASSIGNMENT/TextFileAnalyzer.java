@@ -6,15 +6,14 @@ import java.io.StringReader;
 
 public class TextFileAnalyzer {
     public static void main(String[] args) {
-        String filePath = "your_file_path.txt"; // Replace with the path to your text file
+        String filePath = "your_file_path.txt"; 
         try {
             FileReader fileReader = new FileReader(filePath);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-            // Initialize StreamTokenizer
+          
             StreamTokenizer tokenizer = new StreamTokenizer(bufferedReader);
-            tokenizer.wordChars('a', 'z'); // Define characters as word characters
-
+            tokenizer.wordChars('a', 'z'); 
             int wordCount = 0;
             int charCount = 0;
             int lineCount = 0;
@@ -29,12 +28,12 @@ public class TextFileAnalyzer {
                 }
             }
 
-            // Check the last line if it doesn't end with EOL
+          
             if (charCount > 0) {
                 lineCount++;
             }
 
-            // Close the file reader
+         
             fileReader.close();
 
             System.out.println("Word count: " + wordCount);
