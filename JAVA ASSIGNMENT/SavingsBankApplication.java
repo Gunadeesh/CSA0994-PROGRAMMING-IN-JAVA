@@ -5,9 +5,9 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class SavingsBankApplication {
-    private static final String DB_URL = "jdbc:mysql://localhost/bank"; // Replace with your database URL
-    private static final String DB_USER = "your_username"; // Replace with your MySQL username
-    private static final String DB_PASSWORD = "your_password"; // Replace with your MySQL password
+    private static final String DB_URL = "jdbc:mysql://localhost/bank"; 
+    private static final String DB_USER = "your_username"; 
+    private static final String DB_PASSWORD = "your_password"; 
 
     public static void main(String[] args) {
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
@@ -29,9 +29,9 @@ public class SavingsBankApplication {
                     String accountantName = scanner.nextLine();
                     System.out.print("Enter Amount: ");
                     double amount = scanner.nextDouble();
-                    String operation = (choice == 1) ? "D" : "W"; // D for deposit, W for withdrawal
+                    String operation = (choice == 1) ? "D" : "W"; 
                     
-                    // Insert transaction into the database
+            
                     String insertQuery = "INSERT INTO transactions (Accn, NameOfAccountant, TypeOfOperation, Amount) VALUES (?, ?, ?, ?)";
                     PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
                     preparedStatement.setInt(1, accn);
