@@ -33,9 +33,9 @@ public class StudentBioDataForm extends Frame implements ActionListener {
         add(saveButton);
 
         try {
-            // Initialize JDBC connection
-            Class.forName("com.mysql.jdbc.Driver"); // Replace with your database driver
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database", "username", "password"); // Replace with your database details
+          
+            Class.forName("com.mysql.jdbc.Driver"); 
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database", "username", "password"); 
             statement = connection.createStatement();
         } catch (Exception e) {
             e.printStackTrace();
@@ -62,7 +62,7 @@ public class StudentBioDataForm extends Frame implements ActionListener {
             String gender = genderField.getText();
 
             try {
-                // Insert data into the database
+               
                 String insertQuery = "INSERT INTO student_info (name, age, gender) VALUES (?, ?, ?)";
                 PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
                 preparedStatement.setString(1, name);
@@ -70,7 +70,7 @@ public class StudentBioDataForm extends Frame implements ActionListener {
                 preparedStatement.setString(3, gender);
                 preparedStatement.executeUpdate();
 
-                // Clear form fields
+            
                 nameField.setText("");
                 ageField.setText("");
                 genderField.setText("");
