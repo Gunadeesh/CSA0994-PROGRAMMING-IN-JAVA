@@ -5,12 +5,12 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class BouncingBallApplet extends Applet implements MouseListener, Runnable {
-    private int x, y;           // Current position of the ball
-    private int xSpeed = 2;     // Horizontal speed of the ball
-    private int ySpeed = 2;     // Vertical speed of the ball
-    private int ballSize = 20;  // Diameter of the ball
+    private int x, y;          
+    private int xSpeed = 2;     
+    private int ySpeed = 2;     
+    private int ballSize = 20;  
 
-    private boolean isRunning = false; // Flag to control animation
+    private boolean isRunning = false; 
 
     public void init() {
         setSize(400, 400);
@@ -38,22 +38,21 @@ public class BouncingBallApplet extends Applet implements MouseListener, Runnabl
 
     public void run() {
         while (isRunning) {
-            // Update the ball's position
+          
             x += xSpeed;
             y += ySpeed;
 
-            // Check for collisions with the edges of the applet
+          
             if (x <= 0 || x + ballSize >= getWidth()) {
-                xSpeed = -xSpeed; // Reverse horizontal direction
+                xSpeed = -xSpeed;
             }
             if (y <= 0 || y + ballSize >= getHeight()) {
-                ySpeed = -ySpeed; // Reverse vertical direction
+                ySpeed = -ySpeed; 
             }
 
-            // Repaint the applet
             repaint();
 
-            // Pause to control the animation speed
+           
             try {
                 Thread.sleep(20);
             } catch (InterruptedException e) {
