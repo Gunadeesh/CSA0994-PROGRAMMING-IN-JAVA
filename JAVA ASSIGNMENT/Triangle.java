@@ -10,26 +10,22 @@ public class Triangle {
     }
 
     public boolean isRight() {
-        // Check if the triangle is a right triangle using the Pythagorean theorem
         return (side1 * side1 + side2 * side2 == side3 * side3) ||
                (side1 * side1 + side3 * side3 == side2 * side2) ||
                (side2 * side2 + side3 * side3 == side1 * side1);
     }
 
     public boolean isScalene() {
-        // Check if no two sides are the same length
         return !((side1 == side2) || (side1 == side3) || (side2 == side3));
     }
 
     public boolean isIsosceles() {
-        // Check if exactly two sides are the same length
         return (side1 == side2 && side1 != side3) ||
                (side1 == side3 && side1 != side2) ||
                (side2 == side3 && side2 != side1);
     }
 
     public boolean isEquilateral() {
-        // Check if all three sides are the same length
         return (side1 == side2) && (side1 == side3);
     }
 
