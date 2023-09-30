@@ -13,7 +13,7 @@ public class Customer {
         System.out.println(accName + " is depositing $" + amount);
         balance += amount;
         System.out.println("New balance after deposit: $" + balance);
-        notify(); // Notify the waiting thread (withdraw) that the deposit is complete.
+        notify();
     }
 
     public synchronized void withdraw(double amount) {
@@ -22,7 +22,7 @@ public class Customer {
         while (balance < amount) {
             try {
                 System.out.println("Insufficient balance. Waiting for deposit...");
-                wait(); // Wait for a deposit if balance is insufficient.
+                wait(); 
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
