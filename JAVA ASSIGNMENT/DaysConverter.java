@@ -23,10 +23,10 @@ public class DaysConverter {
                 System.out.println("No. of weeks: " + weeks);
                 System.out.println("No. of days: " + remainingDaysInWeeks);
 
-                break; // Exit the loop on successful input
+                break; 
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input. Please enter a valid integer.");
-                scanner.next(); // Consume invalid input
+                scanner.next(); 
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
