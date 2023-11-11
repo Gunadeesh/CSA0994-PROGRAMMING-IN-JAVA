@@ -1,0 +1,39 @@
+4 and 5
+
+ What will be the Output of the below code:
+
+public class A { 
+
+    public static void main(String[] args) 
+
+    { 
+
+        if (true) 
+
+            break; 
+
+    } 
+} 
+
+class Base { 
+
+    protected void foo() {} 
+}  
+
+class Derived extends Base { 
+
+    void foo() {} 
+}  
+
+public class Main { 
+
+    public static void main(String args[]) { 
+
+        Derived d = new Derived(); 
+
+        d.foo(); 
+
+    } 
+}
+
+The break statement is used outside of a loop or switch statement in the first part, and there is an extra public class declaration in the third part. Both of these issues will result in compilation errors.
